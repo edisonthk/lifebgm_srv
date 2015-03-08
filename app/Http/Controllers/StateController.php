@@ -34,7 +34,7 @@ class StateController extends Controller {
 
 					// echo $current_time . " " . $from . " " . $to . " <br />";
 
-					if($current_time > $from && $current_time < $to){
+					if($current_time < $from || $current_time > $to){
 						$condition_is_true = false;
 					}
 				}
@@ -47,7 +47,7 @@ class StateController extends Controller {
 		}
 
 		$data = [
-			"action" => $results[0]
+			"action" => (count($results) > 0 ? $results[0] : null)
 		];
 		return $this->response($data);
 	}

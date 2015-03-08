@@ -1,0 +1,15 @@
+
+サーバー: ydmbufds4n.database.windows.net,1433 
+SQL データベース: lifebgm
+ユーザー名: codegarage
+
+PHP Data Objects (PDO) サンプル コード:
+
+try {
+   $conn = new PDO ( "dblib:host=ydmbufds4n.database.windows.net:1433;dbname=lifebgm", "codegarage", "9f2Ff7k9Z");
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+}
+catch ( PDOException $e ) {
+   print( "Error connecting to SQL Server." );
+   die(print_r($e));
+}
